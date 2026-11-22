@@ -90,3 +90,5 @@ a um ou mais commits no Git.
 - Plano: `bcdedit /set {fwbootmgr} bootsequence {d271875f-…}` (vale **só para o próximo boot**) e reiniciar
   remotamente. O notebook cai direto no Ventoy.
 - Antes disso, parar a gravação do OBS no notebook, para não corromper o vídeo.
+- Usuário parou o OBS. Executado pela rede: `bootsequence` = `UEFI:Removable Device` (confirmado no `bcdedit`)
+  e `shutdown /r /t 5`. **Último comando executado no Windows 10 deste notebook.**
