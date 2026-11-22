@@ -47,6 +47,12 @@ pela Microsoft, e a BIOS do Positivo o bloqueou.
 | Seleção de software | **desmarcar** "GNOME"; **marcar** "Ambiente de desktop Debian", **Xfce**, **servidor SSH** e utilitários padrão do sistema |
 | GRUB | Sim, no disco principal |
 
+## Primeiro acesso pela rede
+- Nesta estação: clique duplo em `estacao/CONECTAR-DEBIAN.bat`, digite o nome do usuário e depois a senha do Debian.
+
+## Encerramento do projeto (limpeza de acesso)
+- Remover `/etc/sudoers.d/90-pc-seguidor-temp` e a linha `pc-seguidor-claude` de `~/.ssh/authorized_keys`.
+
 ## Depois de instalar (o Claude faz pela rede via SSH)
 - zram (`zram-tools`), `vm.swappiness=10`, `noatime`
 - cortar serviços desnecessários na inicialização

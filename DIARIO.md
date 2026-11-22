@@ -107,3 +107,19 @@ a um ou mais commits no Git.
 - Idioma: Português do Brasil. Teclado: Português Brasileiro.
 - Rede: o instalador achou as duas placas, `ens1f1` (Realtek, cabo) e `wlp3s0` (Intel Wireless 3160).
   O firmware do Wi‑Fi carregou sozinho. Escolhida a `wlp3s0` (Wi‑Fi).
+- Usuário adiantou as telas seguintes para o vídeo não ficar longo: Wi‑Fi da rede local conectado,
+  usuário criado, **particionamento assistido com o disco inteiro** (só o HD interno WD 500 GB, apagando
+  Windows, `C:` e `D:`), esquema padrão. Instalação do sistema básico em andamento.
+- Alerta enviado sobre a tela que ainda vem: **seleção de software** (trocar GNOME por Xfce e marcar o servidor SSH).
+
+### Acesso ao Debian preparado (enquanto instala)
+- Chave SSH própria do projeto gerada nesta estação: `~/.ssh/pc_seguidor_ed25519` (ed25519, sem senha,
+  **fora do Git**; só a pública vai para o notebook).
+- `estacao/CONECTAR-DEBIAN.bat` + `conectar-debian.ps1` (clique duplo):
+  - acha o notebook pelo MAC do Wi‑Fi;
+  - pergunta o nome do usuário;
+  - envia a chave pública, e o **usuário digita a senha do Debian na própria janela**;
+  - cria um `sudo` sem senha **temporário** em `/etc/sudoers.d/90-pc-seguidor-temp`, para a manutenção remota;
+  - testa e grava o log em `%LOCALAPPDATA%\PC-Seguidor\conexao-debian.log`.
+- O comando remoto vai em base64, porque o PowerShell 5.1 quebra aspas nos argumentos do `ssh.exe`.
+- **Pendência de fim de projeto:** remover `/etc/sudoers.d/90-pc-seguidor-temp` e a chave do `authorized_keys`.
