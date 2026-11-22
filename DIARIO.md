@@ -81,3 +81,12 @@ a um ou mais commits no Git.
 - Sem Rufus: o pendrive do usuário já tem **Ventoy**. Ele estava no notebook como `E:` (rótulo `Ventoy`, 3,1 GB livres).
   A ISO foi copiada **pela rede** (WinRM) para a raiz do pendrive.
 - Roteiro de instalação em `plano/instalacao-debian.md`.
+- **1ª cópia falhou**: uma conferência de hash feita no meio da cópia travou o arquivo
+  (o Windows mostra o arquivo antes de terminar; só havia 424 de 795 MB). Lição: só conferir depois que a cópia terminar.
+- **2ª cópia OK** (610 s pelo Wi‑Fi): 794.820.608 bytes, **SHA512 confere no próprio pendrive**.
+
+### Boot pelo pendrive sem apertar tecla
+- `bcdedit /enum firmware` no notebook mostra a entrada `UEFI:Removable Device` `{d271875f-49bd-11ef-84d0-806e6f6e6963}`.
+- Plano: `bcdedit /set {fwbootmgr} bootsequence {d271875f-…}` (vale **só para o próximo boot**) e reiniciar
+  remotamente. O notebook cai direto no Ventoy.
+- Antes disso, parar a gravação do OBS no notebook, para não corromper o vídeo.
