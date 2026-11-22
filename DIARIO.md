@@ -45,3 +45,11 @@ a um ou mais commits no Git.
   fora do Git (`%LOCALAPPDATA%\PC-Seguidor\notebook.cred`) e testa a conexão.
 - Mudança de método de trabalho: comandos para o usuário passam a vir **prontos em
   arquivo de clique duplo**, nada para digitar.
+
+### 1ª tentativa de conexão — falhou
+- Usuário usado: `Usuario` (nome da conta local do notebook).
+- Causa encontrada **nesta estação**: o serviço WinRM estava **parado** (Manual/Stopped),
+  então o `TrustedHosts` não foi gravado (continua vazio) e a conexão por IP é recusada.
+- Correção em `estacao/conectar-notebook.ps1`: liga o WinRM antes de gravar o
+  TrustedHosts, para se der erro e grava tudo em `%LOCALAPPDATA%\PC-Seguidor\conexao.log`
+  (sem senha) para diagnóstico sem precisar de foto.
