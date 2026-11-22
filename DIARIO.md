@@ -31,3 +31,5 @@ a um ou mais commits no Git.
   do firewall do Windows em rede "Pública". **Não dá para acessar sem liberar
   algo no próprio notebook.**
 - Próximo passo: confirmar o IP no notebook com `ipconfig`.
+- **Confirmado com `ipconfig` no notebook: o IP dele é `192.168.100.158`.**
+- Próximo passo: levar `scripts/liberar-acesso-remoto.ps1` ao notebook por pendrive.
