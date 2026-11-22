@@ -247,8 +247,14 @@ a um ou mais commits no Git.
 - Teste remoto: bloqueio com `light-locker-command -l`, foto do display `:1`. Após o `loginctl unlock-session`, o
   light-locker não voltou sozinho para o tty7, então voltei com `chvt 7`. No uso normal, a senha digitada faz essa volta.
 
+### Validação após reiniciar
+- Reboot remoto: SSH de volta em 59 s, **boot em 45,0 s** (igual ao de antes da customização).
+- Tela de login: **avatar "L" redondo, nome "Usuario", data e hora em branco** no topo, fundo desfocado. O
+  `greeter-hide-users=false` passou a valer.
+- Após o login do usuário: **o Plank abriu sozinho**, o ícone do Finder apareceu (o cache do Plank se renovou), a barra
+  de cima continua escura. RAM: 621 MB usados com a área de trabalho.
+
 ### Pendências
-- Reiniciar para valer o nome + avatar na tela de login/bloqueio e conferir se o Plank abre sozinho no login.
 - Opcional: religar o Secure Boot? **Não recomendado**: esta BIOS de 2016 barrou o boot do Debian com ele ligado.
 - Conferir o plugue do carregador (possível mau contato).
 - Opcional: religar o Secure Boot.
