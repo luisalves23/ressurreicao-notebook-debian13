@@ -1,0 +1,8 @@
+﻿
+### 5. Mostrar o usuario (nome + avatar) em vez de pedir para digitar o nome
+  [Seat:*]
+  greeter-hide-users=false
+
+### TELA DE BLOQUEIO APLICADA 2026-11-22 15:59:12
+EXIT=0
+B  greeter-hide-users=false

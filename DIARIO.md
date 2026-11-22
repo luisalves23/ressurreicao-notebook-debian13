@@ -215,7 +215,40 @@ a um ou mais commits no Git.
 - Ver `plano/dock-estilo-mac.md`. Dá para fazer: zoom, esconder e translucidez com o Plank (está no Debian 13).
   Blur real só como teste (picom). O efeito de lente Liquid Glass não é viável.
 
+### Customização visual estilo Mac
+- **Gravação ANTES** (`gravacoes/01-antes-customizacao.mp4`) feita antes de mexer em qualquer coisa, com ffmpeg + xdotool
+  num roteiro fixo (`debian/demo-gravacao.sh`). O mouse se move "de mão" (curvas de Bezier, aceleração, tremor),
+  a pedido do usuário. Bugs resolvidos no caminho: `ffmpeg` lendo o script pela entrada (`-nostdin`), pasta "Vídeos"
+  com acento mal codificado e `awk` em pt_BR escrevendo "0,012" (`LC_ALL=C`).
+- **Papel de parede:** primeiro um original gerado ("Entardecer", SVG, que fica no repo); depois trocado pela foto
+  escolhida pelo usuário (Vernazza, Unsplash/Anders Jildén), recortada para 1366×768.
+- **Ícones:** a instalação do WhiteSur (GitHub) foi barrada pela regra de segurança da sessão, então entrou o
+  elementary-xfce (repo Debian). Com a **autorização explícita do usuário**, o WhiteSur foi instalado (instalador
+  revisado antes, rodado sem root). Janelas: tema Arc.
+- **Dock (Plank):** a v1 ficou grande, espaçada e com zoom exagerado (crítica do usuário). Na v3, seguindo a imagem de
+  referência: paddings em décimos do ícone (1,2/1,4/1,4/2), ícone 42, zoom 128%, vidro com borda sutil,
+  some com janela maximizada e volta com o mouse na borda (testado). Ícone do Claude Code com o **símbolo oficial**
+  (Wikimedia Commons) num squircle claro.
+- **Barra de cima:** escura translúcida, só com menu, bandeja, relógio e ações. O painel de baixo foi removido.
+- **Erros meus corrigidos:** `xfconf-query -rR /panels` apagou o painel de cima inteiro (restaurado do backup); a cópia
+  do `thunar.desktop` fazia o Plank mostrar um ícone extra; o script recriava os atalhos com o Plank aberto e ele reordenava tudo.
+- **Gravação DEPOIS:** `gravacoes/02-depois-customizacao.mp4`.
+- RAM com a área de trabalho: 556 MB antes → ~690 MB depois (Plank ~40 MB; o resto é cache de ícones e tema).
+
+### Tela de bloqueio estilo Mac (`debian/tela-bloqueio/`)
+- Quem bloqueia é o light-locker, que mostra o LightDM GTK greeter 2.0.9, a mesma tela do login.
+- Aplicado: fundo = Vernazza **desfocada** (gerada uma vez com o ffmpeg `gblur`), avatar próprio (degradê do pôr do sol
+  + inicial, registrado no AccountsService), tema Arc-Dark, CSS de vidro (`/var/lib/lightdm/.config/gtk-3.0/gtk.css`),
+  data e hora em pt-BR no topo, botão de energia. `greeter-hide-users=false` para mostrar nome e avatar
+  (**só vale depois de reiniciar**: o LightDM lê isso ao iniciar).
+- **Não dá:** os dois estados do macOS (foto nítida + relógio grande → clique → desfoque) e o player de música.
+  O greeter GTK tem um estado só. Os greeters em HTML rodam um navegador inteiro a cada bloqueio: pesado e lento demais aqui.
+- **Layout:** avatar e campos ficam lado a lado (fixo no greeter, o CSS não muda).
+- Teste remoto: bloqueio com `light-locker-command -l`, foto do display `:1`. Após o `loginctl unlock-session`, o
+  light-locker não voltou sozinho para o tty7, então voltei com `chvt 7`. No uso normal, a senha digitada faz essa volta.
+
 ### Pendências
+- Reiniciar para valer o nome + avatar na tela de login/bloqueio e conferir se o Plank abre sozinho no login.
 - Opcional: religar o Secure Boot? **Não recomendado**: esta BIOS de 2016 barrou o boot do Debian com ele ligado.
 - Conferir o plugue do carregador (possível mau contato).
 - Opcional: religar o Secure Boot.

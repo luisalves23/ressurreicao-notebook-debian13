@@ -1,0 +1,30 @@
+﻿
+### 1. Fundo desfocado (gerado uma vez; nada e calculado na hora de bloquear)
+   /usr/share/backgrounds/pc-seguidor/vernazza-desfocado.jpg 24K
+
+### 2. Avatar do usuario (registrado no AccountsService; o greeter nao le a home, que e privada)
+  Icon=/var/lib/AccountsService/icons/usuario
+
+### 3. Configuracao do greeter
+  [greeter]
+  background=/usr/share/backgrounds/pc-seguidor/vernazza-desfocado.jpg
+  user-background=false
+  theme-name=Arc-Dark
+  icon-theme-name=elementary-xfce-dark
+  font-name=Sans 11
+  xft-antialias=true
+  xft-hintstyle=hintslight
+  xft-rgba=rgb
+  indicators=~spacer;~clock;~spacer;~power
+  clock-format=%A, %d de %B    %H:%M
+  position=50%,center 52%,center
+  panel-position=top
+  hide-user-image=false
+  round-user-image=true
+  screensaver-timeout=60
+
+### 4. CSS do greeter (aparencia: vidro, avatar redondo, sem caixas)
+   /var/lib/lightdm/.config/gtk-3.0/gtk.css 3093 bytes
+
+### TELA DE BLOQUEIO APLICADA 2026-11-22 15:57:44
+EXIT=0

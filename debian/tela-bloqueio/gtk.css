@@ -1,0 +1,117 @@
+/* Tela de bloqueio/login estilo macOS para o lightdm-gtk-greeter 2.0.x
+   Instalado em /var/lib/lightdm/.config/gtk-3.0/gtk.css (o greeter roda como usuario "lightdm").
+   Projeto PC do Seguidor. */
+
+/* ---- barra de cima: transparente, so o relogio centralizado e a energia ---- */
+#panel_window {
+  background: transparent;
+  box-shadow: none;
+}
+#panel_window menubar,
+#panel_window menubar > menuitem {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+/* o relogio e um item "desabilitado" (o tema pinta de cinza): forcar branco em todos os estados */
+#panel_window label,
+#panel_window menuitem label,
+#panel_window menuitem:disabled label,
+#panel_window *:disabled {
+  color: #ffffff;
+  font-size: 14pt;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+}
+#panel_window menubar > menuitem:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+}
+#panel_window menubar > menuitem image {
+  color: #ffffff;
+  -gtk-icon-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- janela de login: sem caixa, so os elementos flutuando sobre o fundo desfocado ---- */
+#login_window,
+#login_window #content_frame,
+#login_window #buttonbox_frame,
+#login_window frame,
+#login_window frame > border {
+  background: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#login_window label {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* nome do usuario (combobox) sem cara de botao */
+#login_window #user_combobox,
+#login_window #user_combobox button,
+#login_window #user_combobox box {
+  background: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 13pt;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+#login_window #user_combobox arrow { color: rgba(255, 255, 255, 0.7); }
+
+/* campo de senha: vidro arredondado */
+#login_window entry {
+  background: rgba(255, 255, 255, 0.20);
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 14px;
+  color: #ffffff;
+  caret-color: #ffffff;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.12);
+  min-height: 30px;
+  padding: 2px 12px;
+}
+#login_window entry:focus {
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.26);
+}
+#login_window entry placeholder,
+#login_window entry text placeholder { color: rgba(255, 255, 255, 0.65); }
+
+/* botoes Entrar / Cancelar: pilulas de vidro */
+#login_window button {
+  background: rgba(255, 255, 255, 0.16);
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  border-radius: 999px;
+  color: #ffffff;
+  box-shadow: none;
+  text-shadow: none;
+  min-height: 26px;
+  padding: 2px 16px;
+}
+#login_window button:hover { background: rgba(255, 255, 255, 0.28); }
+#login_window button label { color: #ffffff; }
+
+/* mensagens (ex.: senha errada) */
+#greeter_infobar,
+#login_window infobar,
+#login_window infobar > revealer > box {
+  background: rgba(0, 0, 0, 0.35);
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+/* menus (energia, sessao) com fundo escuro translucido */
+menu, .menu, .context-menu {
+  background: rgba(30, 30, 36, 0.92);
+  color: #ffffff;
+  border-radius: 10px;
+}
+menu menuitem:hover { background: rgba(255, 255, 255, 0.16); }
