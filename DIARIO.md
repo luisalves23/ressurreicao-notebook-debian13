@@ -21,3 +21,13 @@ a um ou mais commits no Git.
 - `scripts/coletar-hardware.ps1`: inventário só-leitura, testado nesta estação (estação de trabalho do autor) — rodou sem erros.
 - `scripts/liberar-acesso-remoto.ps1`: liga WinRM no PC do seguidor, com firewall restrito à rede local e opção `-Desfazer`.
 - Escolhido WinRM (PowerShell Remoting) em vez de SSH/AnyDesk: já vem no Windows 7/10, não precisa baixar nada no PC velho e é reversível.
+
+### Segunda varredura — notebook conectado ao Wi‑Fi
+- O equipamento é um **notebook**.
+- Dois aparelhos novos na rede:
+  - `192.168.100.158` — MAC `A0-D3-7A-XX-XX-XX` (MAC de fábrica, de placa Wi‑Fi). **Provável notebook.**
+  - `192.168.100.156` — MAC `8A-E5-56-AD-B2-B3` (MAC aleatório, típico de celular). Descartado.
+- O `.158` não responde ping e não tem nenhuma porta aberta: é o comportamento
+  do firewall do Windows em rede "Pública". **Não dá para acessar sem liberar
+  algo no próprio notebook.**
+- Próximo passo: confirmar o IP no notebook com `ipconfig`.
