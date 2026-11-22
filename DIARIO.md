@@ -33,3 +33,15 @@ a um ou mais commits no Git.
 - Próximo passo: confirmar o IP no notebook com `ipconfig`.
 - **Confirmado com `ipconfig` no notebook: o IP dele é `192.168.100.158`.**
 - Próximo passo: levar `scripts/liberar-acesso-remoto.ps1` ao notebook por pendrive.
+
+### Acesso remoto liberado no notebook (Windows 10)
+- Pasta `scripts` copiada por pendrive (letra `E:`) e `liberar-acesso-remoto.ps1` executado como Administrador.
+- Resultado: "ACESSO LIBERADO". O script avisou "usuário sem senha", mas o usuário
+  já tinha colocado senha antes — o aviso usa o campo `PasswordRequired`, que não
+  diz se a senha existe. **Falso alarme; ajustar o aviso depois.**
+- Teste daqui: ping OK, **porta 5985 (WinRM) aberta**, `Test-WSMan` respondeu. 135/445 seguem fechadas (esperado).
+- Criado `estacao/CONECTAR-NOTEBOOK.bat` (clique duplo nesta estação): confia no IP,
+  pede usuário/senha numa janela do Windows, guarda a credencial criptografada
+  fora do Git (`%LOCALAPPDATA%\PC-Seguidor\notebook.cred`) e testa a conexão.
+- Mudança de método de trabalho: comandos para o usuário passam a vir **prontos em
+  arquivo de clique duplo**, nada para digitar.
