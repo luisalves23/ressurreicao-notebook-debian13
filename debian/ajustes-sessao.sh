@@ -35,6 +35,13 @@ pref("network.dns.disablePrefetch", true);
 pref("extensions.pocket.enabled", false);
 pref("browser.newtabpage.activity-stream.showSponsored", false);
 pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+// Sem a pergunta "Fechar a janela e sair do Firefox?" no Ctrl+Q
+pref("browser.warnOnQuitShortcut", false);
+// Sem a barra "O Firefox envia dados..." e sem telemetria (menos processamento e rede em segundo plano)
+pref("datareporting.policy.dataSubmissionPolicyBypassNotification", true);
+pref("datareporting.healthreport.uploadEnabled", false);
+pref("toolkit.telemetry.enabled", false);
+pref("app.shield.optoutstudies.enabled", false);
 // <<< pc-seguidor
 EOF
 sed -n '/>>> pc-seguidor/,/<<< pc-seguidor/p' "$F" | grep -c '^pref' | sed 's/^/preferencias aplicadas: /'

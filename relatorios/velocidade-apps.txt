@@ -1,0 +1,8 @@
+Tempo de abertura (primeira vez apos ligar, gravando a tela ao mesmo tempo) - 22/11/2026 16:27
+  Arquivos (Thunar)              1.9 s
+  Firefox                        5.0 s
+  Terminal                       2.1 s
+  Claude Code (janela)           1.5 s
+  LibreOffice Writer            10.9 s
+  Editor de texto                2.3 s
+  Configuracoes                  2.0 s

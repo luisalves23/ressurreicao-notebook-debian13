@@ -254,7 +254,29 @@ a um ou mais commits no Git.
 - Após o login do usuário: **o Plank abriu sozinho**, o ícone do Finder apareceu (o cache do Plank se renovou), a barra
   de cima continua escura. RAM: 621 MB usados com a área de trabalho.
 
+### Vídeo dos apps funcionando (`debian/demo-apps.sh`)
+- O roteiro clica nos ícones do dock com o mouse "de mão" e cronometra cada abertura: Arquivos, Firefox + YouTube
+  (Big Buck Bunny, clique no play), Terminal (fastfetch + cmatrix), Claude Code (pede login), Writer, Editor
+  (digita e desfaz, para fechar sem a pergunta "salvar?"), Configurações e, no fim, um terminal mostrando os tempos.
+- A 1ª gravação mostrou problemas, todos corrigidos: o YouTube não tocava (autoplay bloqueado → clique no play),
+  o Firefox perguntava "sair?" no Ctrl+Q, a barra de telemetria aparecia, o Claude ficava com a tela preta
+  (precisa de ~20 s para desenhar) e o Writer não fechava.
+- **Achado importante:** o uBlock Origin (pacote Debian) reconstruía os filtros a **cada** abertura do Firefox:
+  ~570 MB e 50% de CPU, e ainda 344 MB / 30% depois de 3 min. **Removido.** O Firefox caiu de 15,3 s para **5,0 s**
+  para abrir e fica em ~10% de CPU parado. O uBO Lite (mais leve) foi configurado por política
+  (`debian/firefox-policies.json`, em `/etc/firefox/policies` e `/usr/share/firefox-esr/distribution`),
+  mas **não instalou**. Pendente.
+- Firefox: sem a pergunta ao sair, sem telemetria nem estudos (`ajustes-sessao.sh` e política).
+- Tempos finais (1ª abertura após ligar, gravando a tela ao mesmo tempo): Arquivos 1,9 s, Firefox 5,0 s, Terminal 2,1 s,
+  Claude Code 1,5 s (janela), Writer 10,9 s, Editor 2,3 s, Configurações 2,0 s (`relatorios/velocidade-apps.txt`).
+- **Pendrive (Ventoy), pasta `PC-Seguidor-videos`:** 01-antes (556 KB), 02-depois (1,6 MB), 03-apps (12 MB) e os tempos.
+  O pendrive foi montado como root, copiado com `sync` e desmontado. Os tamanhos conferem. A conferência por hash
+  falhou por erro meu (leitura sem sudo), não por problema na cópia.
+
 ### Pendências
+- **Pente fino completo** pedido pelo usuário: adiado para economizar tokens. O primeiro achado já foi corrigido (uBlock).
+- Instalar o uBlock Origin Lite à mão (addons.mozilla.org) ou depurar a política.
+- Remover o acesso temporário (sudo sem senha + chave SSH) ao declarar o notebook pronto.
 - Opcional: religar o Secure Boot? **Não recomendado**: esta BIOS de 2016 barrou o boot do Debian com ele ligado.
 - Conferir o plugue do carregador (possível mau contato).
 - Opcional: religar o Secure Boot.
