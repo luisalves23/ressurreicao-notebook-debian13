@@ -1,0 +1,40 @@
+﻿
+### 1. Instalar o Plank
+0.11.89
+
+### 2. Tema 'Vidro'
+tema em /home/usuario/.local/share/plank/themes/Vidro
+
+### 3. Atalho do Claude Code (abre o terminal ja dentro do claude)
+ok
+
+### 4. Itens do dock
+  01-arquivos
+  02-firefox
+  03-terminal
+  04-claude
+  05-writer
+  06-editor
+  07-ajustes
+  08-lixeira
+
+### 5. Configuracao do dock (zoom, esconder, tema)
+  theme = 'Vidro'
+  icon-size = 46
+  zoom-enabled = true
+  zoom-percent = 165
+  hide-mode = 'window-dodge'
+
+### 6. Plank inicia junto com a sessao
+ok
+
+### 7. Painel do Xfce: tira o de baixo, deixa o de cima translucido
+  paineis: 1 
+
+### 8. Area de trabalho limpa (lixeira foi para o dock)
+ok
+
+### 9. Iniciar o dock
+
+### DOCK CONCLUIDO 2026-11-22 15:44:43
+EXIT=0
