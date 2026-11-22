@@ -128,3 +128,9 @@ a um ou mais commits no Git.
 - Confirmado pelo usuário: **GNOME desmarcado**; marcados **Ambiente de desktop Debian + Xfce + Servidor SSH +
   Utilitários de sistema padrão**; servidor web e outras interfaces desmarcados.
 - Instalação dos pacotes em andamento.
+
+### Instalação concluída
+- O instalador **não perguntou sobre o GRUB**: em máquina UEFI, o Debian instala o `grub-efi` sozinho na
+  partição EFI do HD. O roteiro foi corrigido.
+- Primeiro boot direto no Debian, com a tela de login do Xfce (LightDM).
+- Daqui: notebook encontrado pelo MAC no **mesmo IP `192.168.100.158`**, **porta 22 (SSH) aberta**.

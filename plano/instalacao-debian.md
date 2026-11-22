@@ -45,7 +45,7 @@ pela Microsoft, e a BIOS do Positivo o bloqueou.
 | Espelho | Brasil → `deb.debian.org` |
 | Concurso de popularidade | Não |
 | Seleção de software | **desmarcar** "GNOME"; **marcar** "Ambiente de desktop Debian", **Xfce**, **servidor SSH** e utilitários padrão do sistema |
-| GRUB | Sim, no disco principal |
+| GRUB | Em UEFI **não é perguntado**: o instalador coloca o `grub-efi` no HD sozinho |
 
 ## Primeiro acesso pela rede
 - Nesta estação: clique duplo em `estacao/CONECTAR-DEBIAN.bat`, digite o nome do usuário e depois a senha do Debian.
