@@ -102,3 +102,8 @@ a um ou mais commits no Git.
   Com Rufus (gravação direta da ISO assinada do Debian) isso não teria acontecido.
 - Lição registrada em `plano/instalacao-debian.md` ("Lição aprendida: Ventoy + Secure Boot").
 - Pós-instalação: avaliar religar o Secure Boot (o Debian instalado é compatível).
+
+### Instalador do Debian (modo texto)
+- Idioma: Português do Brasil. Teclado: Português Brasileiro.
+- Rede: o instalador achou as duas placas, `ens1f1` (Realtek, cabo) e `wlp3s0` (Intel Wireless 3160).
+  O firmware do Wi‑Fi carregou sozinho. Escolhida a `wlp3s0` (Wi‑Fi).
