@@ -153,6 +153,19 @@ a um ou mais commits no Git.
 - Reiniciado remotamente: SSH voltou em 58 s. **Boot final: 44,7 s** (userspace 71,7 → 23,0 s; carregador 15,3 → 8,8 s).
 - Comparativo Windows × Debian em `relatorios/comparativo.md`.
 
+### Sessão gráfica e travamento
+- Usuário fez login no Xfce. RAM com a área de trabalho: **583 MB usados, 1,24 GB disponíveis**.
+  Compositor ligado. Drivers VA‑API (i965/iHD) já instalados.
+- Logo depois, **o notebook sumiu da rede** (sem ping, sem SSH) e a tela apagou. Não acordou com tecla.
+  O usuário teve de **forçar o desligamento** (botão por ~20 s), ou seja, **travou** e não estava suspenso.
+- Suspeita: travamento conhecido dos Celeron Braswell/Cherry Trail no Linux quando ociosos (estados de
+  economia C-state profundos). A conferir no log do boot anterior (`journalctl -b -1`).
+- Ao religar: **"Secure Boot Violation – Invalid signature detected"**. O Secure Boot voltou a valer
+  (a BIOS pode ter voltado ao padrão no desligamento forçado, ou o pendrive Ventoy ainda estava plugado).
+  Minha afirmação de que "o Debian dá boot com o Secure Boot ligado" **não vale para esta BIOS de 2016**,
+  que provavelmente não traz o certificado de terceiros da Microsoft usado pelo shim do Debian.
+  Solução: desligar o Secure Boot na BIOS de novo e tirar o pendrive.
+
 ### Pendências
 - Ajustes do Xfce dentro da sessão do usuário (compositor, efeitos), que exigem login no notebook.
 - Medir a RAM com a área de trabalho aberta e com o Firefox aberto.
