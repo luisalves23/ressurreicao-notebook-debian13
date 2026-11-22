@@ -64,3 +64,11 @@ a um ou mais commits no Git.
 - Resumo: Positivo S14BW01, Celeron N3010 (2 núcleos, 1,04 GHz), **2 GB DDR3** (2 slots, máx. 8 GB),
   **HD WD 500 GB 5400 rpm** (SMART ok), Windows 10 **1803** (2018), bateria 97%, boot de 131 a 410 s.
 - Gargalos: HD mecânico + 2 GB RAM. Plano em `plano/diagnostico-e-plano.md`.
+
+### Decisão: sem troca de peças → Debian 13 + Xfce
+- Decidido que **não haverá SSD nem RAM extra** por enquanto.
+- Conferido pela rede o hardware que importa para o Linux: áudio Realtek ALC269, Wi‑Fi Intel 3160,
+  touchpad Synaptics, webcam UVC. Tudo com suporte bom. UEFI 64 bits com Secure Boot ligado, disco GPT.
+  Pastas do usuário e `D:` vazias.
+- Comparados Debian 13, Mint 22.3 e MX 25. **Escolhido Debian 13 (netinst) + Xfce**: menos RAM
+  ocupada e suporte até 2030. Detalhes em `plano/escolha-do-sistema.md`.
