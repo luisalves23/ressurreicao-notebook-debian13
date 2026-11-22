@@ -190,7 +190,16 @@ a um ou mais commits no Git.
 - Xfce: sombras desligadas. O compositor continua ligado para o vídeo não rasgar.
 - Fora da inicialização: print-applet (39 MB), xfce4-notes e xiccd.
 
+### Teste do YouTube
+- Na 1ª abertura do Firefox, o uBlock Origin compilou as listas: 635 MB e 49% de CPU, a RAM lotou
+  e a zram segurou (938 MB → 246 MB). Passou sozinho em ~1 min, e o **earlyoom não fechou nada**.
+- Vídeo tocando: a decodificação pela placa **confirmada** (o processo RDD tem `/dev/dri/renderD*` aberto) com 6–10% de CPU.
+  Firefox + aba somam ~75%. Sobra pouca CPU: recomendado 480p.
+- RAM: 1,4 GB usados + ~670 MB comprimidos na zram; **swap do HD não foi usada**.
+- Detalhes em `relatorios/comparativo.md`.
+
 ### Pendências
-- Testar o YouTube no Firefox e medir CPU/RAM.
+- Opcional: religar o Secure Boot? **Não recomendado**: esta BIOS de 2016 barrou o boot do Debian com ele ligado.
+- Conferir o plugue do carregador (possível mau contato).
 - Opcional: religar o Secure Boot.
 - Fim do projeto: remover o sudo temporário e a chave SSH.
