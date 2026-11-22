@@ -1,0 +1,125 @@
+﻿=== MEDICAO 2026-11-22 14:47:29 | notebook-seguidor | Debian 13.8 | kernel 6.12.117+deb13-amd64
+
+=== Tempo de boot
+Startup finished in 2.677s (firmware) + 8.784s (loader) + 10.282s (kernel) + 22.955s (userspace) = 44.700s 
+graphical.target reached after 22.952s in userspace.
+
+=== Top 15 servicos mais lentos no boot
+6.471s dev-sda2.device
+4.478s accounts-daemon.service
+4.078s udisks2.service
+3.968s NetworkManager.service
+3.571s systemd-fsck@dev-disk-by\x2duuid-CB7D\x2d6457.service
+2.501s wtmpdb-update-boot.service
+1.720s bluetooth.service
+1.626s dbus.service
+1.601s systemd-journal-flush.service
+1.566s user@106.service
+1.440s apparmor.service
+1.222s systemd-udevd.service
+1.191s zramswap.service
+1.069s keyboard-setup.service
+1.067s systemd-tmpfiles-setup-dev-early.service
+
+=== Cadeia critica
+The time when unit became active or started is printed after the "@" character.
+The time the unit took to start is printed after the "+" character.
+
+graphical.target @22.952s
+└─multi-user.target @22.951s
+  └─ssh.service @21.973s +976ms
+    └─network.target @21.883s
+      └─NetworkManager.service @17.905s +3.968s
+        └─dbus.service @16.259s +1.626s
+          └─basic.target @15.740s
+            └─sockets.target @15.733s
+              └─systemd-hostnamed.socket @15.732s
+                └─sysinit.target @15.703s
+                  └─apparmor.service @14.260s +1.440s
+                    └─local-fs.target @14.200s
+                      └─boot-efi.mount @13.814s +384ms
+                        └─systemd-fsck@dev-disk-by\x2duuid-CB7D\x2d6457.service @10.198s +3.571s
+                          └─dev-disk-by\x2duuid-CB7D\x2d6457.device @10.190s
+
+=== Memoria (MB)
+               total       usada       livre    compart.  buff/cache  disponível
+Mem.:           1828         398        1239          19         348        1429
+Swap:           2995           0        2995
+
+=== Swap
+NAME       TYPE      SIZE USED PRIO
+/dev/sda3  partition 1,9G   0B   -2
+/dev/zram0 partition 1,1G   0B  100
+swappiness=150
+
+=== Top 12 processos por memoria (RSS MB)
+   MB  PROCESSO
+   95  lightdm-gtk-gre
+   95  Xorg
+   30  unattended-upgr
+   27  pulseaudio
+   27  pulseaudio
+   20  NetworkManager
+   17  systemd-journal
+   14  systemd
+   14  udisksd
+   12  systemd
+   12  systemd
+   11  wpa_supplicant
+
+=== Servicos habilitados
+accounts-daemon.service
+anacron.service
+apparmor.service
+bluetooth.service
+console-setup.service
+cron.service
+earlyoom.service
+getty@.service
+grub-common.service
+keyboard-setup.service
+lightdm.service
+lm-sensors.service
+networking.service
+NetworkManager-dispatcher.service
+NetworkManager.service
+ssh.service
+sshd-keygen.service
+systemd-pstore.service
+systemd-timesyncd.service
+udisks2.service
+unattended-upgrades.service
+wpa_supplicant.service
+wtmpdb-update-boot.service
+zramswap.service
+
+=== Timers
+apt-listchanges.timer
+systemd-tmpfiles-clean.timer
+anacron.timer
+dpkg-db-backup.timer
+apt-daily.timer
+logrotate.timer
+fstrim.timer
+man-db.timer
+apt-daily-upgrade.timer
+e2scrub_all.timer
+
+=== Disco
+/dev/sda2       455G  4,0G  428G   1% /
+rw,noatime,errors=remount-ro
+
+=== Pacotes instalados: 1433
+  [instalado] firefox-esr
+  [ausente]   chromium
+  [instalado] libreoffice-writer
+  [instalado] zram-tools
+  [instalado] earlyoom
+  [instalado] unattended-upgrades
+  [instalado] webext-ublock-origin-firefox
+  [ausente]   flatpak
+  [instalado] cups
+  [instalado] bluez
+  [instalado] modemmanager
+  [instalado] avahi-daemon
+  [ausente]   exim4-base

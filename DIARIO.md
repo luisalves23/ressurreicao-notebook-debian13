@@ -134,3 +134,27 @@ a um ou mais commits no Git.
   partição EFI do HD. O roteiro foi corrigido.
 - Primeiro boot direto no Debian, com a tela de login do Xfce (LightDM).
 - Daqui: notebook encontrado pelo MAC no **mesmo IP `192.168.100.158`**, **porta 22 (SSH) aberta**.
+
+### Acesso SSH ao Debian
+- `CONECTAR-DEBIAN.bat` rodado pelo usuário: chave enviada e sudo temporário criado. Host `notebook-seguidor`, usuário `usuario`, Debian 13.8, kernel 6.12.117.
+- O teste final do conector acusou erro falso: o PowerShell 5.1 tirou as aspas e o shell leu os `|` como pipes.
+  O acesso foi confirmado à mão (`SUDO_OK`) e o teste foi corrigido.
+
+### Medição inicial → otimização → medição final
+- `debian/medir.sh` (só leitura) antes: boot **1 min 40 s**, 408 MB usados, swap só no HD.
+  Maiores atrasos: apparmor 44,6 s (cache do 1º boot) e NetworkManager-wait-online 7 s.
+- `debian/otimizar.sh` aplicado (log em `relatorios/debian-otimizacao-log-*.txt`), **10 passos, EXIT=0**:
+  zram (zstd, 60%, prio 100), swappiness 150 / page-cluster 0, earlyoom, serviços desligados
+  (NM-wait-online, ModemManager, cups-browsed, avahi, e2scrub_reap; cups sob demanda), `noatime`
+  (backup `/etc/fstab.antes-pc-seguidor`, troca testada antes numa cópia), GRUB 1 s, initramfs `MODULES=dep`,
+  atualizações de segurança automáticas, uBlock Origin.
+- Revisão antes de rodar pegou 3 bugs no próprio script: o `fstab` do Debian não tem `relatime` escrito,
+  o `cp -n` pode falhar e as aspas no `EARLYOOM_ARGS` não funcionam no systemd.
+- Reiniciado remotamente: SSH voltou em 58 s. **Boot final: 44,7 s** (userspace 71,7 → 23,0 s; carregador 15,3 → 8,8 s).
+- Comparativo Windows × Debian em `relatorios/comparativo.md`.
+
+### Pendências
+- Ajustes do Xfce dentro da sessão do usuário (compositor, efeitos), que exigem login no notebook.
+- Medir a RAM com a área de trabalho aberta e com o Firefox aberto.
+- Opcional: religar o Secure Boot.
+- Fim do projeto: remover o sudo temporário e a chave SSH.

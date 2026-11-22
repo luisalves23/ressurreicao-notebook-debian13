@@ -1,0 +1,48 @@
+﻿
+### 1. Pacotes: zram, earlyoom, atualizacoes automaticas, uBlock Origin
+ok
+
+### 2. zram: swap comprimida na RAM (zstd, 60% da RAM, prioridade acima do HD)
+NAME       TYPE      SIZE USED PRIO
+/dev/sda3  partition 1,9G   0B   -2
+/dev/zram0 partition 914M   0B  100
+
+### 3. Memoria virtual ajustada para zram
+vm.swappiness = 150
+vm.page-cluster = 0
+vm.vfs_cache_pressure = 50
+
+### 4. earlyoom: fecha o processo que estourar a RAM antes do notebook congelar
+active
+
+### 5. Servicos desnecessarios fora do boot
+desligado: NetworkManager-wait-online.service
+desligado: ModemManager.service
+desligado: cups-browsed.service
+desligado: avahi-daemon.service
+desligado: avahi-daemon.socket
+desligado: e2scrub_reap.service
+cups: sob demanda (socket)
+
+### 6. Disco: noatime (menos escritas no HD a cada leitura de arquivo)
+UUID=3ed9753a-5512-4cb4-b2b4-e20e369caa27	/	ext4	noatime,errors=remount-ro	0	1
+
+0 erro de análise, 0 erro, 1 aviso
+fstab valido
+
+### 7. GRUB: menu de boot de 5s para 1s
+GRUB_TIMEOUT=1
+done
+
+### 8. initramfs so com os modulos deste hardware (carrega menos do HD no boot)
+update-initramfs: Generating /boot/initrd.img-6.12.117+deb13-amd64
+initrd: 24M
+
+### 9. Atualizacoes de seguranca automaticas
+enabled
+
+### 10. Limpeza do cache do apt
+ok
+
+### OTIMIZACAO CONCLUIDA 2026-11-22 14:45:43
+EXIT=0
