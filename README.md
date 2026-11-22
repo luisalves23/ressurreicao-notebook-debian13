@@ -29,5 +29,16 @@ dar mais vida útil à máquina.
    (a senha é digitada por você, nunca fica salva no repositório).
 4. Rodar `scripts/coletar-hardware.ps1` remotamente e salvar o resultado em `relatorios/`.
 
+### Preparação desta estação (uma vez, PowerShell como Administrador)
+
+O PC do seguidor não está em domínio, então esta estação precisa confiar no IP dele:
+
+```powershell
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "IP_DO_PC_DO_SEGUIDOR" -Force
+```
+
+Ao terminar o projeto, desfazer aqui com `Clear-Item WSMan:\localhost\Client\TrustedHosts -Force`
+e lá com `liberar-acesso-remoto.ps1 -Desfazer`.
+
 Plano B (sem rede): rodar `coletar-hardware.ps1` direto no PC do seguidor pelo
 pendrive — ele grava o relatório ao lado do script — e trazer o arquivo para `relatorios/`.
