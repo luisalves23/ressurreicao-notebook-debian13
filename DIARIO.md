@@ -16,3 +16,8 @@ a um ou mais commits no Git.
   portas de Windows abertas — são roteador, celulares, TVs e afins.
 - Motivo: o PC do seguidor **ainda não foi conectado ao Wi‑Fi**.
 - Próximo passo: conectar o PC na rede e rodar `scripts/liberar-acesso-remoto.ps1` nele.
+
+### Ferramentas preparadas
+- `scripts/coletar-hardware.ps1`: inventário só-leitura, testado nesta estação (estação de trabalho do autor) — rodou sem erros.
+- `scripts/liberar-acesso-remoto.ps1`: liga WinRM no PC do seguidor, com firewall restrito à rede local e opção `-Desfazer`.
+- Escolhido WinRM (PowerShell Remoting) em vez de SSH/AnyDesk: já vem no Windows 7/10, não precisa baixar nada no PC velho e é reversível.
