@@ -166,8 +166,31 @@ a um ou mais commits no Git.
   que provavelmente não traz o certificado de terceiros da Microsoft usado pelo shim do Debian.
   Solução: desligar o Secure Boot na BIOS de novo e tirar o pendrive.
 
+### ✅ Causa real do "travamento": BATERIA ACABOU (corrige as suspeitas acima)
+- Depois de desligar o Secure Boot, o Debian ligou. `uptime` de 21 min e o mesmo `boot_id` mostraram que
+  **ele não reiniciou: voltou da hibernação**.
+- Log: às **14:55:46**, `systemd-logind: The system will hybrid sleep now!`.
+- Histórico do UPower: **bateria descarregando** de 6% (14:49) até 2% (14:55:25). Às 14:50:13 o carregador
+  apareceu como "charging" por um instante e sumiu: **plugue do carregador possivelmente frouxo**.
+- A UPower do Debian tem `CriticalPowerAction=HybridSleep` com 2%. A suspensão híbrida gravou a memória
+  no HD e dormiu. A bateria zerou de vez, e no religamento o sistema voltou da imagem no HD.
+- **Secure Boot religado:** a explicação mais provável é que a BIOS voltou ao padrão de fábrica com a
+  bateria totalmente zerada. Não confirmado.
+- **Descartado:** travamento por C-states do Braswell (minha primeira suspeita estava errada).
+- Bateria agora: 9%, carregando a 11,3 W, saúde 96,7%.
+- **Correção:** `CriticalPowerAction=Hibernate` (backup `/etc/UPower/UPower.conf.antes-pc-seguidor`).
+  Com 2%, o notebook grava a sessão e **desliga de verdade**, sem drenar a bateria até zerar.
+
+### Ajustes de sessão (`debian/ajustes-sessao.sh`, log em `relatorios/debian-ajustes-sessao-log-*.txt`)
+- Teste de vídeo (`vainfo`): o driver **i965** decodifica **H.264, VP8 e HEVC** pela placa; **não faz VP9/AV1**.
+  O iHD falha neste Celeron. Fixado `LIBVA_DRIVER_NAME=i965`.
+- Firefox ESR 153 (`/etc/firefox-esr/firefox-esr.js`, bloco `pc-seguidor`, 12 preferências): 2 processos de conteúdo,
+  libera abas com pouca RAM, VA-API forçado, **VP9 e AV1 desligados para o YouTube mandar H.264**
+  (decodificado pela placa), sessão salva a cada 60 s, sem prefetch, sem Pocket nem patrocinados.
+- Xfce: sombras desligadas. O compositor continua ligado para o vídeo não rasgar.
+- Fora da inicialização: print-applet (39 MB), xfce4-notes e xiccd.
+
 ### Pendências
-- Ajustes do Xfce dentro da sessão do usuário (compositor, efeitos), que exigem login no notebook.
-- Medir a RAM com a área de trabalho aberta e com o Firefox aberto.
+- Testar o YouTube no Firefox e medir CPU/RAM.
 - Opcional: religar o Secure Boot.
 - Fim do projeto: remover o sudo temporário e a chave SSH.

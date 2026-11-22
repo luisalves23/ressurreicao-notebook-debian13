@@ -1,0 +1,19 @@
+﻿
+### 1. Aceleracao de video: driver VA-API i965 (o iHD nao suporta este Celeron)
+LIBVA_DRIVER_NAME=i965
+
+### 2. Firefox ESR: menos processos, video pela placa (H.264), menos escrita no HD
+preferencias aplicadas: 12
+
+### 3. Xfce: sem sombras de janela (compositor fica ligado para o video nao rasgar)
+show_frame_shadow = false
+show_popup_shadow = false
+show_dock_shadow = false
+
+### 4. Xfce: tirar da inicializacao o que nao serve aqui
+desligado: print-applet
+desligado: xfce4-notes-autostart
+desligado: xiccd
+
+### AJUSTES DE SESSAO CONCLUIDOS 2026-11-22 15:10:31
+EXIT=0
