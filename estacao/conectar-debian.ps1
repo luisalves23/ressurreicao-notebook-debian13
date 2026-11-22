@@ -45,7 +45,9 @@ ssh -t -o StrictHostKeyChecking=accept-new "$user@$ip" "echo $b64 | base64 -d > 
 Write-Log "Envio da chave/sudo: codigo $LASTEXITCODE"
 
 # 5. Teste sem senha
-$t = ssh -i $key -o BatchMode=yes -o StrictHostKeyChecking=accept-new "$user@$ip" 'echo "$(hostname) | $(whoami) | sudo:$(sudo -n true 2>/dev/null && echo ok || echo FALHOU)"' 2>&1
+# sem aspas internas: o PowerShell 5.1 remove aspas duplas ao passar argumentos para o ssh.exe
+$t = ssh -i $key -o BatchMode=yes -o StrictHostKeyChecking=accept-new "$user@$ip" 'hostname; whoami; sudo -n true && echo SUDO_OK' 2>&1
+$t = ($t -join ' | ')
 if ($LASTEXITCODE -eq 0) {
     @{ ip = $ip; user = $user } | ConvertTo-Json | Out-File (Join-Path $dir 'debian.json') -Encoding UTF8
     Write-Log "CONECTADO: $t"
