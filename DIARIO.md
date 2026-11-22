@@ -72,3 +72,12 @@ a um ou mais commits no Git.
   Pastas do usuário e `D:` vazias.
 - Comparados Debian 13, Mint 22.3 e MX 25. **Escolhido Debian 13 (netinst) + Xfce**: menos RAM
   ocupada e suporte até 2030. Detalhes em `plano/escolha-do-sistema.md`.
+
+### Mídia de instalação
+- Plano aprovado: Debian 13 netinst + Xfce.
+- Versão atual em cdimage.debian.org: **13.8.0**. Baixada `debian-13.8.0-amd64-netinst.iso` (758 MB) para `iso/`
+  (fora do Git pelo `.gitignore`; o `SHA512SUMS` oficial fica versionado).
+- **SHA512 confere** com o oficial: `825d85a0…0558eaadb`.
+- Sem Rufus: o pendrive do usuário já tem **Ventoy**. Ele estava no notebook como `E:` (rótulo `Ventoy`, 3,1 GB livres).
+  A ISO foi copiada **pela rede** (WinRM) para a raiz do pendrive.
+- Roteiro de instalação em `plano/instalacao-debian.md`.

@@ -4,6 +4,9 @@
 senha*
 credenciais*
 
+# Imagens de sistema (grandes demais para o Git; o checksum fica versionado)
+iso/*.iso
+
 # Arquivos temporários
 *.tmp
 Thumbs.db
