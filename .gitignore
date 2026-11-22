@@ -1,0 +1,10 @@
+# Nunca versionar credenciais
+*.cred
+*.xml.cred
+senha*
+credenciais*
+
+# Arquivos temporários
+*.tmp
+Thumbs.db
+desktop.ini
