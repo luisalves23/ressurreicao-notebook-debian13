@@ -123,3 +123,8 @@ a um ou mais commits no Git.
   - testa e grava o log em `%LOCALAPPDATA%\PC-Seguidor\conexao-debian.log`.
 - O comando remoto vai em base64, porque o PowerShell 5.1 quebra aspas nos argumentos do `ssh.exe`.
 - **Pendência de fim de projeto:** remover `/etc/sudoers.d/90-pc-seguidor-temp` e a chave do `authorized_keys`.
+
+### Seleção de software (tasksel)
+- Confirmado pelo usuário: **GNOME desmarcado**; marcados **Ambiente de desktop Debian + Xfce + Servidor SSH +
+  Utilitários de sistema padrão**; servidor web e outras interfaces desmarcados.
+- Instalação dos pacotes em andamento.
