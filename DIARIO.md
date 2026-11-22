@@ -198,6 +198,23 @@ a um ou mais commits no Git.
 - RAM: 1,4 GB usados + ~670 MB comprimidos na zram; **swap do HD não foi usada**.
 - Detalhes em `relatorios/comparativo.md`.
 
+- Retorno do usuário: o vídeo rodou em qualidade "ok" e travou muito pouco. Apps abrem rápido.
+  No Windows, o terminal levava 3 minutos para abrir e o navegador nem abria.
+
+### Claude Code (pedido do seguidor)
+- Instalados `curl`, `git` e `ripgrep`, que faltavam.
+- Instalador oficial (`https://claude.ai/install.sh`) **baixado e revisado antes de rodar**: baixa de
+  `downloads.claude.ai` e confere SHA256. Rodado como `usuario`, sem sudo, como o próprio instalador exige.
+- Instalado **Claude Code 2.1.330** em `~/.local/bin/claude`. Log em `relatorios/claude-code-instalacao-log-*.txt`.
+- `~/.local/bin` não entrava no PATH da sessão atual (a pasta não existia no login). Fixado no `~/.bashrc`
+  com um bloco `pc-seguidor`. Um terminal novo acha o `claude`.
+- `claude --help`: 0,54 s e 107 MB de RAM. **Falta o login** com a conta do seguidor (`claude`, depois `/login`),
+  que é dele: eu não faço.
+
+### Dock estilo Mac (avaliação)
+- Ver `plano/dock-estilo-mac.md`. Dá para fazer: zoom, esconder e translucidez com o Plank (está no Debian 13).
+  Blur real só como teste (picom). O efeito de lente Liquid Glass não é viável.
+
 ### Pendências
 - Opcional: religar o Secure Boot? **Não recomendado**: esta BIOS de 2016 barrou o boot do Debian com ele ligado.
 - Conferir o plugue do carregador (possível mau contato).
