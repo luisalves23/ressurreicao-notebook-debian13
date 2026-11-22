@@ -19,24 +19,27 @@ passo "2. Tema 'Vidro'"
 T="$HOME/.local/share/plank/themes/Vidro"; mkdir -p "$T"
 cat > "$T/dock.theme" <<'EOF'
 # Tema "Vidro" - projeto PC do Seguidor. Cores: vermelho;;verde;;azul;;opacidade (0-255)
+# Paddings do Plank sao em DECIMOS do tamanho do icone (padrao 2.5). v1 usava 6/4/6/7 = dock enorme e espalhado.
 [PlankTheme]
-TopRoundness=14
-BottomRoundness=14
+TopRoundness=11
+BottomRoundness=11
 LineWidth=1
-OuterStrokeColor=255;;255;;255;;70
-FillStartColor=255;;255;;255;;68
-FillEndColor=235;;240;;255;;38
-InnerStrokeColor=255;;255;;255;;38
+# borda escura sutil: define o vidro tambem sobre janelas brancas
+OuterStrokeColor=0;;0;;0;;55
+FillStartColor=255;;255;;255;;78
+FillEndColor=240;;242;;255;;58
+# reflexo claro por dentro da borda (efeito vidro)
+InnerStrokeColor=255;;255;;255;;95
 
 [PlankDockTheme]
-HorizPadding=6
-TopPadding=4
-BottomPadding=6
-ItemPadding=7
-IndicatorSize=4
-IconShadowSize=2
-UrgentBounceHeight=1.2
-LaunchBounceHeight=0.4
+HorizPadding=1.2
+TopPadding=1.4
+BottomPadding=1.4
+ItemPadding=2
+IndicatorSize=2.6
+IconShadowSize=1
+UrgentBounceHeight=0.8
+LaunchBounceHeight=0.3
 FadeOpacity=1
 ClickTime=250
 UrgentBounceTime=600
@@ -62,14 +65,26 @@ Type=Application
 Name=Claude Code
 Comment=Assistente de programacao no terminal
 Exec=xfce4-terminal --title "Claude Code" --working-directory=HOME_DIR -x bash -lc "claude; exec bash"
-Icon=utilities-terminal
+Icon=pc-seguidor-claude-code
 Terminal=false
 Categories=Development;
 EOF
 sed -i "s|HOME_DIR|$HOME|" "$HOME/.local/share/applications/claude-code.desktop"
 echo "ok"
 
+# Arquivos com o icone "rosto do Finder" tambem parado. NAO copiar o thunar.desktop (v2 fez isso e o Plank
+# deixou de casar a janela do Thunar com o atalho: aparecia um icone extra). Em vez disso, o icone
+# org.xfce.thunar do tema WhiteSur (instalado na pasta do usuario) passa a apontar para o do Finder.
+rm -f "$HOME/.local/share/applications/thunar.desktop"
+for d in "$HOME"/.local/share/icons/WhiteSur*/apps/scalable; do
+  [ -f "$d/system-file-manager.svg" ] && ln -sf system-file-manager.svg "$d/org.xfce.thunar.svg"
+done
+for t in "$HOME"/.local/share/icons/WhiteSur*; do gtk-update-icon-cache -q -f -t "$t" 2>/dev/null || true; done
+
 passo "4. Itens do dock"
+# Fechar o Plank ANTES de mexer nos atalhos: aberto, ele reage a cada arquivo apagado/criado,
+# remove itens e reordena a lista sozinho (aconteceu na v2).
+pkill -x plank 2>/dev/null || true; sleep 1
 L="$HOME/.config/plank/dock1/launchers"; mkdir -p "$L"; rm -f "$L"/*.dockitem
 item() { printf '[PlankDockItemPreferences]\nLauncher=%s\n' "$2" > "$L/$1.dockitem"; echo "  $1"; }
 item 01-arquivos   file:///usr/share/applications/thunar.desktop
@@ -87,9 +102,9 @@ gsettings set $S dock-items "['01-arquivos.dockitem','02-firefox.dockitem','03-t
 gsettings set $S theme 'Vidro'
 gsettings set $S position 'bottom'
 gsettings set $S alignment 'center'
-gsettings set $S icon-size 46
+gsettings set $S icon-size 42
 gsettings set $S zoom-enabled true
-gsettings set $S zoom-percent 165
+gsettings set $S zoom-percent 128     # v1: 165% = exagerado
 gsettings set $S hide-mode 'window-dodge'     # some quando uma janela encosta (ex.: maximizada)
 gsettings set $S hide-delay 300
 gsettings set $S unhide-delay 0
@@ -119,9 +134,14 @@ if xfconf-query -c xfce4-panel -p /panels | tail -n +3 | grep -qx 2; then
 fi
 echo "  paineis: $(xfconf-query -c xfce4-panel -p /panels | tail -n +3 | tr '\n' ' ')"
 xfconf-query -c xfce4-panel -p /panels/panel-1/background-style -n -t uint -s 1
+# barra escura translucida (estilo barra do Mac sobre foto); a clara (v1) deixava o texto ilegivel
 xfconf-query -c xfce4-panel -p /panels/panel-1/background-rgba -n -a \
-  -t double -s 0.97 -t double -s 0.97 -t double -s 0.98 -t double -s 0.72
+  -t double -s 0.06 -t double -s 0.06 -t double -s 0.09 -t double -s 0.45
 xfconf-query -c xfce4-panel -p /panels/panel-1/size -n -t uint -s 26
+# so menu (1), espacador (3), bandeja (6), relogio (8) e acoes (10): sem lista de janelas e sem areas de trabalho
+xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -a -t int -s 1 -t int -s 3 -t int -s 6 -t int -s 7 -t int -s 8 -t int -s 9 -t int -s 10
+xfconf-query -c xfce4-panel -p /plugins/plugin-3/expand -n -t bool -s true
+xfconf-query -c xfce4-panel -p /plugins/plugin-3/style -n -t uint -s 0
 xfce4-panel -r >/dev/null 2>&1 &
 sleep 3
 
