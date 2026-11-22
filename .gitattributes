@@ -1,0 +1,2 @@
+# Scripts que rodam no Debian precisam de fim de linha Unix (LF)
+*.sh text eol=lf
