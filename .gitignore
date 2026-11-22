@@ -7,6 +7,9 @@ credenciais*
 # Imagens de sistema (grandes demais para o Git; o checksum fica versionado)
 iso/*.iso
 
+# Gravações de tela: mostram o nome do dono do notebook; ficam só locais (publicadas no vídeo do canal)
+gravacoes/
+
 # Arquivos temporários
 *.tmp
 Thumbs.db

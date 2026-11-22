@@ -72,7 +72,6 @@ Arquivos 1,9 s · Terminal 2,1 s · Editor 2,3 s · Configurações 2,0 s · Lib
 │   ├── visual/               papel de parede SVG, ícone do Claude Code, recortes
 │   └── tela-bloqueio/        CSS do greeter, avatar, script de aplicação
 ├── relatorios/               saídas reais: inventário, medições antes/depois, logs de cada script
-├── gravacoes/                vídeos antes/depois/apps + quadros extraídos
 └── iso/SHA512SUMS            checksums oficiais da ISO usada
 ```
 

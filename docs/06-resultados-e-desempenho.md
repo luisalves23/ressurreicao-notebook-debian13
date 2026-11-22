@@ -38,7 +38,9 @@ Recomendação: 480p (o 720p funciona, mas no limite).
 ## Claude Code
 Instalador oficial (`claude.ai/install.sh`, revisado: baixa de `downloads.claude.ai` com SHA256), versão 2.1.330 em `~/.local/bin`. `claude --help`: 0,54 s / 107 MB. O login fica por conta do dono da conta.
 
-## Vídeos (em [`gravacoes/`](../gravacoes/))
+## Vídeos
+As gravações não estão neste repositório, porque mostram o nome do dono do notebook. Elas fazem parte do vídeo do projeto.
+Os scripts que as produziram estão versionados, e as capturas desta documentação vieram delas, com o nome coberto.
 | Arquivo | Conteúdo |
 |---|---|
 | `01-antes-customizacao.mp4` | Debian padrão: roteiro fixo (área de trabalho, menu, Thunar maximizado, terminal) |
