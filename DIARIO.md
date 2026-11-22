@@ -53,3 +53,14 @@ a um ou mais commits no Git.
 - Correção em `estacao/conectar-notebook.ps1`: liga o WinRM antes de gravar o
   TrustedHosts, para se der erro e grava tudo em `%LOCALAPPDATA%\PC-Seguidor\conexao.log`
   (sem senha) para diagnóstico sem precisar de foto.
+
+### 2ª tentativa — CONECTADO
+- Conectado como `192.168.100.158\Usuario` em **DESKTOP-BBF5M1P** (Windows 10 Home Single Language).
+  O login levou cerca de 90 s, reflexo da lentidão do notebook.
+
+### Inventário coletado pela rede
+- `coletar-hardware.ps1` rodou remotamente em 59 s, sem fechar nada: o OBS Studio seguiu gravando a tela do notebook.
+- Relatório em `relatorios/inventario-DESKTOP-BBF5M1P-20261122-1244.txt`.
+- Resumo: Positivo S14BW01, Celeron N3010 (2 núcleos, 1,04 GHz), **2 GB DDR3** (2 slots, máx. 8 GB),
+  **HD WD 500 GB 5400 rpm** (SMART ok), Windows 10 **1803** (2018), bateria 97%, boot de 131 a 410 s.
+- Gargalos: HD mecânico + 2 GB RAM. Plano em `plano/diagnostico-e-plano.md`.

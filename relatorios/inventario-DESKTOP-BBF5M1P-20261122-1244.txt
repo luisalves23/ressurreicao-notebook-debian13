@@ -1,0 +1,191 @@
+﻿INVENTARIO DO PC - gerado em 2026-11-22 12:44:24
+
+======================================================================
+  SISTEMA OPERACIONAL
+======================================================================
+  Nome do PC                  : DESKTOP-BBF5M1P
+  Sistema                     : Microsoft Windows 10 Home Single Language 64 bits
+  Versao / Build              : 10.0.17134 / SP 0
+  Instalado em                : 05/26/2019 10:20:51
+  Ultimo boot                 : 11/22/2026 11:07:43
+  Fabricante / Modelo         : Positivo Informatica SA / S14BW01
+  Tipo (1=desk 2=note)        : 2
+  Usuario logado              : DESKTOP-BBF5M1P\Usuario
+  PowerShell                  : 5.1.17134.858
+
+======================================================================
+  PLACA-MAE E BIOS
+======================================================================
+  Placa-mae                   : Positivo Informatica SA S14BW01 (rev To be filled by O.E.M.)
+  BIOS                        : American Megatrends Inc. 1.06.X (08/17/2016 21:00:00)
+  Serial                      : [serial-removido]
+  Firmware                    : UEFI
+
+======================================================================
+  PROCESSADOR
+======================================================================
+  Modelo                      : Intel(R) Celeron(R) CPU  N3010  @ 1.04GHz
+  Nucleos / Threads           : 2 / 2
+  Clock max / atual           : 1041 MHz / 1041 MHz
+  Suporte 64 bits             : SIM
+  Socket                      : SOCKET 0
+  Virtualizacao (VT)          : True
+  Uso agora                   : 90 %
+
+======================================================================
+  MEMORIA RAM
+======================================================================
+  Total visivel               : 1,9 GB
+  Livre agora                 : 0,2 GB
+  Slots na placa              : 2
+  Maximo suportado            : 8 GB
+  Pente A1_DIMM0              : 2,0 GB DDR3 1600 MHz  (Samsung          M471B5674EB0-YK0  )
+
+======================================================================
+  DISCOS FISICOS
+======================================================================
+  Modelo                      : WDC WD5000LPCX-22VHAT0
+  Tamanho / Interface         : 465,8 GB / IDE
+  Serial                      :      WD-[serial-removido]
+  Status WMI                  : OK
+  SMART preve falha?          : nao
+  ---
+  Modelo                      : USB DISK 2.0 USB Device
+  Tamanho / Interface         : 14,5 GB / USB
+  Serial                      : [serial-removido]
+  Status WMI                  : OK
+  ---
+  WDC WD5000LPCX-22VHAT0      : tipo HDD, saude boa
+  USB DISK 2.0                : tipo desconhecido, saude boa
+
+======================================================================
+  PARTICOES / ESPACO
+======================================================================
+  C:  NTFS       total 152,5 GB   livre 99,4 GB    (65% livre)
+  D:  NTFS       total 312,6 GB   livre 312,5 GB   (100% livre)
+
+======================================================================
+  PLACA DE VIDEO
+======================================================================
+  Name                        : Intel(R) HD Graphics
+  AdapterRAM                  : 1073741824
+  DriverVersion               : 20.19.15.4531
+  DriverDate                  : 20160929000000.000000-000
+  VideoModeDescription        : 1366 x 768 x 4294967296 cores
+  ---
+
+======================================================================
+  REDE
+======================================================================
+  Intel(R) Dual Band Wireless-AC 3160 | MAC A0:D3:7A:XX:XX:XX | conectado: True
+  Realtek PCIe GBE Family Controller | MAC 80:EE:73:XX:XX:XX | conectado: False
+  Bluetooth Device (Personal Area Network) #2 | MAC A0:D3:7A:XX:XX:XX | conectado: False
+  IP: 192.168.100.158, fe80::f937:d028:5708:7411, [IPv6-publico-removido], [IPv6-publico-removido]
+
+======================================================================
+  BATERIA (se notebook)
+======================================================================
+  Name                        : standard
+  EstimatedChargeRemaining    : 81
+  BatteryStatus               : 2
+  ---
+  Saude da bateria            : 97% da capacidade original
+
+======================================================================
+  TEMPERATURA (nem todo PC informa)
+======================================================================
+  Nao disponivel.
+
+======================================================================
+  PROGRAMAS NA INICIALIZACAO
+======================================================================
+  OneDriveSetup                  C:\Windows\SysWOW64\OneDriveSetup.exe /thfirstsetup
+  OneDriveSetup                  C:\Windows\SysWOW64\OneDriveSetup.exe /thfirstsetup
+  OneDrive                       "C:\Users\Usuario\AppData\Local\Microsoft\OneDrive\OneDrive.exe" /background
+  Microsoft Edge Update          "C:\Users\Usuario\AppData\Local\Microsoft\EdgeUpdate\1.3.319.41\MicrosoftEdgeUpdateCore.exe"
+  SecurityHealth                 %ProgramFiles%\Windows Defender\MSASCuiL.exe
+  RTHDVCPL                       "C:\Program Files\Realtek\Audio\HDA\RAVCpl64.exe" -s
+  SynTPEnh                       %ProgramFiles%\Synaptics\SynTP\SynTPEnh.exe
+
+======================================================================
+  TOP 15 PROCESSOS POR MEMORIA
+======================================================================
+  MsMpEng                             238 MB
+  obs64                               178 MB
+  svchost                              83 MB
+  explorer                             75 MB
+  wsmprovhost                          67 MB
+  powershell                           63 MB
+  ShellExperienceHost                  55 MB
+  svchost                              51 MB
+  SearchUI                             46 MB
+  Memory Compression                   43 MB
+  dwm                                  39 MB
+  svchost                              35 MB
+  audiodg                              28 MB
+  svchost                              26 MB
+  OfficeClickToRun                     24 MB
+
+======================================================================
+  ANTIVIRUS
+======================================================================
+  Windows Defender
+
+======================================================================
+  PROGRAMAS INSTALADOS
+======================================================================
+  Total: 40
+  Google Chrome 157.0.8103.79
+  Google Update Helper 1.3.33.7
+  Intel(R) Processor Graphics 20.19.15.4531
+  Microsoft Office Professional Plus 2016 - pt-br 16.0.17726.20160
+  Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.40.33810 14.40.33810.0
+  Microsoft Visual C++ 2022 X64 Additional Runtime - 14.40.33810 14.40.33810
+  Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.40.33810 14.40.33810
+  OBS Studio 33.0.3
+  Office 16 Click-to-Run Extensibility Component 16.0.17628.20110
+  Office 16 Click-to-Run Extensibility Component 64-bit Registration 16.0.17726.20160
+  Office 16 Click-to-Run Licensing Component 16.0.17726.20108
+  Office 16 Click-to-Run Localization Component 16.0.17628.20110
+  Pacote de Driver do Windows - Everest Semiconductor (ES8316AudCodec) MEDIA  (09/08/2016 10.37.5.619) 09/08/2016 10.37.5.619
+  Pacote de Driver do Windows - Intel (camera) Image  (03/02/2016 21.10586.6069.2007) 03/02/2016 21.10586.6069.2007
+  Pacote de Driver do Windows - Intel (dptf_acpi) DPTF  (11/23/2015 8.1.10902.254) 11/23/2015 8.1.10902.254
+  Pacote de Driver do Windows - Intel (dptf_cpu) DPTF  (11/23/2015 8.1.10902.254) 11/23/2015 8.1.10902.254
+  Pacote de Driver do Windows - Intel (dptf_pch) DPTF  (11/23/2015 8.1.10902.254) 11/23/2015 8.1.10902.254
+  Pacote de Driver do Windows - Intel (esif_lf) DPTF  (11/23/2015 8.1.10902.254) 11/23/2015 8.1.10902.254
+  Pacote de Driver do Windows - Intel (HID_PCI) HIDClass  (10/25/2015 2.0.20.3155) 10/25/2015 2.0.20.3155
+  Pacote de Driver do Windows - Intel (IntelSST) MEDIA  (08/09/2015 604.10135.2747.5232) 08/09/2015 604.10135.2747.5232
+  Pacote de Driver do Windows - Intel (ISH) System  (11/01/2015 2.0.20.3157) 11/01/2015 2.0.20.3157
+  Pacote de Driver do Windows - Intel (ISH_BusDriver) System  (11/08/2015 2.0.20.3159) 11/08/2015 2.0.20.3159
+  Pacote de Driver do Windows - Intel (TXEIx64) System  (10/11/2015 2.0.0.1094) 10/11/2015 2.0.0.1094
+  Pacote de Driver do Windows - Intel Corporation (iaisp) System  (03/02/2016 21.10586.6069.2007) 03/02/2016 21.10586.6069.2007
+  Pacote de Driver do Windows - Intel Corporation (iaspie) System  (06/01/2015 604.10146.2657.947) 06/01/2015 604.10146.2657.947
+  Pacote de Driver do Windows - Intel Corporation (iauarte) System  (05/21/2015 604.10146.2653.391) 05/21/2015 604.10146.2653.391
+  Pacote de Driver do Windows - Intel Corporation (IntelBatteryManagement) Battery  (04/15/2016 604.10586.3086.14859) 04/15/2016 604.10586.3086.14859
+  Pacote de Driver do Windows - Intel Corporation (MBI) System  (05/26/2015 604.10146.2655.573) 05/26/2015 604.10146.2655.573
+  Pacote de Driver do Windows - Intel Corporation (PMIC) System  (09/30/2015 604.10146.2656.7129) 09/30/2015 604.10146.2656.7129
+  Pacote de Driver do Windows - Intel Corporation (WUDFRd) Sensor  (10/25/2015 2.0.20.3155) 10/25/2015 2.0.20.3155
+  Pacote de Driver do Windows - Intel Corporation (WUDFRd) Sensor  (11/01/2015 2.0.20.3157) 11/01/2015 2.0.20.3157
+  Pacote de Driver do Windows - Intel(R) (HidEventFilter) HIDClass  (04/25/2015 604.10146.2708.64268) 04/25/2015 604.10146.2708.64268
+  Pacote de Driver do Windows - Realtek Semiconductor Corp System  (05/08/2017 1.0.245.3) 05/08/2017 1.0.245.3
+  Pacote de Driver do Windows - Realtek Semiconductor Corp. Net  (06/06/2017 3008.54.0414.2017) 06/06/2017 3008.54.0414.2017
+  Realtek High Definition Audio Driver 6.0.1.7695
+  Synaptics Pointing Device Driver 19.0.19.1
+  Update for Windows 10 for x64-based Systems (KB4023057) 2.71.0.0
+  Update for Windows 10 for x64-based Systems (KB4480730) 2.55.0.0
+  UpdateAssistant 1.25.0.0
+  WinRAR 5.50 (64-bit) 5.50.0
+
+======================================================================
+  ERROS DE DISCO/HARDWARE NO LOG (ultimos 30 dias)
+======================================================================
+  Nenhum erro relevante encontrado.
+
+======================================================================
+  TEMPO DE BOOT (Windows 7+)
+======================================================================
+  11/08/2024 12:20:51: 132 s
+  30/07/2024 15:21:11: 159 s
+  24/07/2024 10:14:06: 231 s
+  18/07/2024 15:41:45: 410 s
+  17/07/2024 12:39:39: 131 s
