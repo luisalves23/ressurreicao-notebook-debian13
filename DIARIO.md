@@ -92,3 +92,13 @@ a um ou mais commits no Git.
 - Antes disso, parar a gravação do OBS no notebook, para não corromper o vídeo.
 - Usuário parou o OBS. Executado pela rede: `bootsequence` = `UEFI:Removable Device` (confirmado no `bcdedit`)
   e `shutdown /r /t 5`. **Último comando executado no Windows 10 deste notebook.**
+- O boot único pelo USB **funcionou**: o notebook foi direto para o pendrive.
+
+### ⚠️ Problema: Secure Boot bloqueou o Ventoy
+- Com o Secure Boot **ligado** (já detectado no levantamento: `Confirm-SecureBootUEFI = True`),
+  o Ventoy parou em **erro de falha de verificação de segurança**.
+- **Solução aplicada pelo usuário:** desligar o Secure Boot na BIOS. Em seguida, **o menu do Ventoy abriu**.
+- Falha nossa: o Secure Boot ligado estava anotado como risco no roteiro, mas **não foi tratado antes do boot**.
+  Com Rufus (gravação direta da ISO assinada do Debian) isso não teria acontecido.
+- Lição registrada em `plano/instalacao-debian.md` ("Lição aprendida: Ventoy + Secure Boot").
+- Pós-instalação: avaliar religar o Secure Boot (o Debian instalado é compatível).
