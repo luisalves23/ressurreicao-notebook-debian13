@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- "Entardecer" - papel de parede original do projeto PC do Seguidor.
+     Inspirado no estilo de ondas suaves e degrades dos papeis de parede atuais do macOS,
+     mas desenhado do zero (nao copia nenhuma imagem da Apple). Licenca: mesma do projeto. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="2732" height="1536" viewBox="0 0 2732 1536">
+  <defs>
+    <linearGradient id="ceu" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#0b1236"/>
+      <stop offset="0.45" stop-color="#2a1a5e"/>
+      <stop offset="0.8" stop-color="#6b2a7a"/>
+      <stop offset="1" stop-color="#c2477a"/>
+    </linearGradient>
+    <radialGradient id="sol" cx="0.72" cy="0.58" r="0.55">
+      <stop offset="0" stop-color="#ffb37a" stop-opacity="0.85"/>
+      <stop offset="0.35" stop-color="#ff7a8a" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ff7a8a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="o1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b2d9e"/>
+      <stop offset="1" stop-color="#8a3fb8"/>
+    </linearGradient>
+    <linearGradient id="o2" x1="0" y1="0" x2="1" y2="0.6">
+      <stop offset="0" stop-color="#5a3fd6"/>
+      <stop offset="0.6" stop-color="#c04fb0"/>
+      <stop offset="1" stop-color="#ff8a6b"/>
+    </linearGradient>
+    <linearGradient id="o3" x1="0" y1="0.2" x2="1" y2="1">
+      <stop offset="0" stop-color="#2e64e0"/>
+      <stop offset="0.55" stop-color="#7d4fe0"/>
+      <stop offset="1" stop-color="#ff9e6b"/>
+    </linearGradient>
+    <linearGradient id="o4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a2a8a"/>
+      <stop offset="1" stop-color="#4b2c9e"/>
+    </linearGradient>
+    <linearGradient id="brilho" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="suave" filterUnits="userSpaceOnUse" x="-200" y="0" width="3132" height="1736"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="muito" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="90"/></filter>
+    <!-- area do filtro bem maior que a onda: senao a sombra deslocada para cima e cortada em linha reta -->
+    <filter id="sombra" filterUnits="userSpaceOnUse" x="-200" y="0" width="3132" height="1736">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="40"/>
+      <feOffset dy="-30" result="s"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.45"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="2732" height="1536" fill="url(#ceu)"/>
+  <rect width="2732" height="1536" fill="url(#sol)"/>
+  <ellipse cx="2000" cy="860" rx="700" ry="420" fill="#ffb07a" opacity="0.35" filter="url(#muito)"/>
+
+  <!-- ondas, do fundo para a frente -->
+  <path filter="url(#sombra)" fill="url(#o1)" opacity="0.9"
+        d="M0 760 C 420 620, 820 900, 1260 780 S 2100 560, 2732 700 L 2732 1536 L 0 1536 Z"/>
+  <path filter="url(#sombra)" fill="url(#o2)"
+        d="M0 930 C 380 820, 760 1060, 1240 960 S 2060 760, 2732 900 L 2732 1536 L 0 1536 Z"/>
+  <path d="M0 930 C 380 820, 760 1060, 1240 960 S 2060 760, 2732 900" fill="none"
+        stroke="url(#brilho)" stroke-width="6" opacity="0.7" filter="url(#suave)"/>
+  <path filter="url(#sombra)" fill="url(#o3)"
+        d="M0 1120 C 460 1010, 900 1230, 1400 1130 S 2240 980, 2732 1090 L 2732 1536 L 0 1536 Z"/>
+  <path d="M0 1120 C 460 1010, 900 1230, 1400 1130 S 2240 980, 2732 1090" fill="none"
+        stroke="#ffffff" stroke-opacity="0.28" stroke-width="5" filter="url(#suave)"/>
+  <path filter="url(#sombra)" fill="url(#o4)"
+        d="M0 1300 C 520 1220, 1000 1420, 1520 1330 S 2320 1220, 2732 1290 L 2732 1536 L 0 1536 Z"/>
+  <path d="M0 1300 C 520 1220, 1000 1420, 1520 1330 S 2320 1220, 2732 1290" fill="none"
+        stroke="#9fb4ff" stroke-opacity="0.25" stroke-width="4" filter="url(#suave)"/>
+</svg>
